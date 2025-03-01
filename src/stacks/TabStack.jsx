@@ -1,12 +1,7 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import React from 'react';
 import HomeStack from './HomeStack';
-import ProfileStack from './ProfileStack';
-import SearchStack from './SearchStack';
-
-import HomeIcon from '../../assets/icons/home.svg'; // Import SVG file
-import SearchIcon from '../../assets/icons/search.svg';
-import ProfileIcon from '../../assets/icons/profile.svg';
+import HomeIcon from '../../assets/icons/home.svg';
 
 const Tab = createBottomTabNavigator();
 
@@ -23,10 +18,6 @@ const TabStack = () => {
 
           if (route.name === 'HomeTab') {
             IconComponent = HomeIcon;
-          } else if (route.name === 'SearchTab') {
-            IconComponent = SearchIcon;
-          } else if (route.name === 'ProfileTab') {
-            IconComponent = ProfileIcon;
           }
 
           return IconComponent ? (
@@ -38,16 +29,6 @@ const TabStack = () => {
         name="HomeTab"
         component={HomeStack}
         options={{tabBarLabel: 'Home'}}
-      />
-      <Tab.Screen
-        name="SearchTab"
-        component={SearchStack}
-        options={{tabBarLabel: 'Search'}}
-      />
-      <Tab.Screen
-        name="ProfileTab"
-        component={ProfileStack}
-        options={{tabBarLabel: 'Profile'}}
       />
     </Tab.Navigator>
   );
